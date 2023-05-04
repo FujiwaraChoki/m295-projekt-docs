@@ -1,0 +1,30 @@
+import PasswordChecker from '../components/PasswordChecker';
+
+# Authenfizierung und Autorisierung
+
+## Authentifizierung
+
+### Was ist Authentifizierung?
+
+Bei der Authentifizierung wird die Identität eines Benutzers oder Prozesses überprüft. Die Authentifizierung erfolgt in der Regel durch die Übermittlung eines Benutzernamens oder einer ID und einer oder mehrerer privater Informationen, die nur der jeweilige Benutzer kennen sollte.
+
+### Was haben wir zur Authentifizierung verwendet?
+
+Wir haben lediglich das eingehende Passwort, das uns von der Client-Seite zur Verfügung gestellt wurde, mit dem richtigen Passwort verglichen,
+mit dem richtigen Passwort (da es nur eines gibt). 
+
+### Wie haben wir es umgesetzt?
+
+Wir haben es in etwa so umgesetzt:
+
+```javascript
+if (clientPassword === 'correctP@ss123!') {
+    res.status(200).send('Anmeldung war erfolgreich! ✔️');
+} else {
+    res.status(401).send('Falsches Passwort ❌!');
+}
+```
+
+You can test it out here:
+
+<PasswordChecker lang={"en"} />

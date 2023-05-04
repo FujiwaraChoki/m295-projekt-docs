@@ -1,0 +1,30 @@
+import PasswordChecker from '../components/PasswordChecker';
+
+# Authenficitaion & Authorization
+
+## Authentication
+
+### What is Authentication?
+
+Authentication is the process of verifying the identity of a user or process. Authentication is commonly performed by submitting a user name or ID and one or more items of private information that only a given user should know.
+
+### What did we use for authentication?
+
+We merely compared the incoming password, which was provided to us by the client side,
+with the correct password (since there only is one). 
+
+### How did we implement it?
+
+We implemented it something like this:
+
+```javascript
+if (clientPassword === 'correctP@ss123!') {
+    res.status(200).send('Login was successful! ✔️');
+} else {
+    res.status(401).send('Wrong password! ❌');
+}
+```
+
+You can test it out here:
+
+<PasswordChecker lang={"en"} />
