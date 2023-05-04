@@ -1,0 +1,72 @@
+# API
+
+Our API consists of {count} endpoints in total. The endpoints are divided into {groups} groups. The groups are:
+
+{groups.map(group => (
+  <div key={group.name}>
+    <h2>{group.name}</h2>
+    <ul>
+      {group.endpoints.map(endpoint => (
+        <li key={endpoint.name}>
+          <a href={endpoint.path}>{endpoint.name}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+))}
+
+## Endpoints
+
+{groups.map(group => (
+  <div key={group.name}>
+    <h2>{group.name}</h2>
+    {group.endpoints.map(endpoint => (
+      <div key={endpoint.name}>
+        <h3>{endpoint.name}</h3>
+        <p>{endpoint.description}</p>
+        <h4>Beispiel</h4>
+        <pre>
+          <code>{endpoint.example}</code>
+        </pre>
+        <h4>Parameters</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {endpoint.parameters.map(parameter => (
+              <tr key={parameter.name}>
+                <td>{parameter.name}</td>
+                <td>{parameter.type}</td>
+                <td>{parameter.description}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <h4>Antwort</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            {endpoint.response.map(response => (
+              <tr key={response.name}>
+                <td>{response.name}</td>
+                <td>{response.type}</td>
+                <td>{response.description}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    ))}
+  </div>
+))}
