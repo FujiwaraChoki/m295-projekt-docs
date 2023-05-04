@@ -4,7 +4,7 @@ import styles from './PasswordChecker.module.css';
 const PasswordChecker = ({ lang }) => {
     const [password, setPassword] = useState('');
     const [response, setResponse] = useState({
-        color: 'rgb(179, 237, 255)'
+        color: 'rgb(230, 249, 255)'
     });
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
