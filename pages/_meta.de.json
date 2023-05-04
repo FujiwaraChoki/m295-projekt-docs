@@ -1,6 +1,8 @@
 {
     "index": "🏠 Zuhause",
     "architecture": "🏗️ Architektur",
+    "api": "📡 API",
+    "auth": "🔐 Authentifizierung",
     "contact": {
         "title": "Kontakt ↗",
         "type": "page",
