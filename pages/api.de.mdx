@@ -1,7 +1,9 @@
-# API
+import { useState } from 'react'
 
-const count = 0;
-const groups = [];
+const [count, setCount] = useState(0);
+const [groups, setGroups] = useState([]);
+
+# API
 
 Unsere API besteht insgesamt aus {count} Endpunkten. Die Endpunkte sind in {groups.length} Gruppen unterteilt. Die Gruppen sind:
 
