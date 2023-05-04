@@ -1,0 +1,10 @@
+{
+  "index": "🏠 Home",
+  "architecture": "🏗️ Architecture",
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page",
+    "href": "mailto:sami@samihindi.com",
+    "newWindow": true
+  }
+}
