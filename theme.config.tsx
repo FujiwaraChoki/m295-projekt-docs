@@ -2,7 +2,12 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
-  logo: <span>ToDo-App Backend</span>,
+  logo: <img src="https://avatars.githubusercontent.com/u/78088687?v=4" style={{
+    width: '10%',
+    height: '10%',
+    borderRadius: '50%',
+    objectFit: 'cover',
+  }} />,
   search: {
     placeholder: '🔍'
   },
