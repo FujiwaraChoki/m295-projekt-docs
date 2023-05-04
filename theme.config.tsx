@@ -7,17 +7,17 @@ const config: DocsThemeConfig = {
     placeholder: '🔍'
   },
   i18n: [
-    { locale: 'en', text: '🇬🇧' },
+    { locale: 'en', text: 'English' },
     { locale: 'de', text: 'Deutsch' },
   ],
   faviconGlyph: '📝',
   project: {
-    link: 'https://github.com/FujiwaraChoki/m295-project',
+    link: 'https://github.com/FujiwaraChoki/m295-projekt-docs',
   },
   chat: {
     link: 'https://discord.com',
   },
-  docsRepositoryBase: 'https://github.com/FujiwaraChoki/m295-project',
+  docsRepositoryBase: 'https://github.com/FujiwaraChoki/m295-projekt-docs/blob/main',
   footer: {
     text: 'MIT 2023 © Sami Hindi.',
   },
