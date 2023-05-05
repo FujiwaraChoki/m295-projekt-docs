@@ -1,0 +1,6 @@
+{
+    "login": "/login",
+    "verify": "/verify",
+    "logout": "/logout",
+    "tasks": "/tasks"
+}
