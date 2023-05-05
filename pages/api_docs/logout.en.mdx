@@ -1,0 +1,41 @@
+---
+title: M295 /logout
+---
+# /logout
+
+Using the `/logout` route will log the User out, and destroy the on-going session.
+
+## Parameters
+
+No parameters are required for this route.
+All required data is retrieved from the passed session.
+
+## Responses
+
+| Status | Meaning | Description |
+| ------ | ------- | ----------- |
+| **204** | No Content | The User was logged out |
+| **401** | Unauthorized | The User is *not* logged in |
+| **500** | Internal Server Error | Something went wrong on the server |
+
+## Example
+
+### Request (JavaScript)
+
+```javascript copy
+const url = 'http://localhost:3000';
+
+fetch(`${url}/logout`, {
+    method: 'DELETE'
+})
+    .then(res => res.json())
+    .then(json => console.log(json))
+    .catch(err => console.error(err));
+```
+
+### Response
+
+**Status Code:** 204
+```json copy
+
+```

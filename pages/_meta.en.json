@@ -1,12 +1,12 @@
 {
-  "index": "🏠 Home",
-  "architecture": "🏗️ Architecture",
-  "api": "📡 API",
-  "auth": "🔐 Authentification",
-  "contact": {
-    "title": "Contact ↗",
-    "type": "page",
-    "href": "mailto:sami@samihindi.com",
-    "newWindow": true
-  }
+    "index": "🏠 Home",
+    "architecture": "🏗️ Architecture",
+    "api_docs": "📡 API",
+    "auth": "🔐 Authentification",
+    "contact": {
+        "title": "Contact ↗",
+        "type": "page",
+        "href": "mailto:sami@samihindi.com",
+        "newWindow": true
+    }
 }

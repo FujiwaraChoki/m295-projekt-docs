@@ -1,0 +1,57 @@
+---
+title: M295 /login
+---
+# /login
+
+This endpoint authenticates the user and ultimately returns a response with whether
+the login was a success or not.
+
+If the login was a success, a session is created using `express-session`.
+
+## Parameters
+
+| **Name** 	| **Type** 	| **Description**           	|
+|----------	|----------	|---------------------------	|
+| email    	| string   	| The E-Mail of the User.   	|
+| password 	| string   	| The Password of the User. 	|
+
+## Responses
+
+| Status | Meaning | Description |
+| ------ | ------- | ----------- |
+| **200** | OK | The login was successful |
+| **400** | Bad Request | Either E-Mail or Password wasn't provided |
+| **403** | Unauthorized | The login information is incorrect |
+| **500** | Internal Server Error | Something went wrong on the server |
+
+## Example
+
+### Request (JavaScript)
+
+```javascript copy
+const url = 'http://localhost:3000';
+
+fetch(`${url}/login`, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        email: 'lolipop66611@gmail.com',
+        password: 'm295'
+    })
+}).then(res => res.json())
+    .then(json => console.log(json))
+    .catch(err => console.error(err));
+```
+
+### Response
+
+**Status Code:** 200
+```json copy
+{
+    "success": true,
+    "email": "lolipop66611@gmail.com",
+    "message": "Login successful"
+}
+```

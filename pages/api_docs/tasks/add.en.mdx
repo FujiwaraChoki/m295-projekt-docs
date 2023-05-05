@@ -1,0 +1,61 @@
+---
+title: M295 /
+---
+# /
+
+When the client sends a request to this endpoint, the server adds the task
+to the tasks.json file and responds with the newly added task.
+
+## Parameters
+
+| **Name** 	| **Type** 	| **Description**           	|
+|----------	|----------	|---------------------------	|
+| title    	| string   	| The title of the Task   	|
+| description 	| string   	| A brief description/overview of the task 	|
+| due_date 	| string   	| The date on which the task is due 	|
+
+## Responses
+
+| Status | Meaning | Description |
+| ------ | ------- | ----------- |
+| **201** | Created | The task was successfully created |
+| **403** | Unauthorized | The User isn't logged in |
+| **406** | Not Acceptable | A title, description or due date wasn't provided |
+| **500** | Internal Server Error | Something went wrong on the server |
+
+## Example
+
+### Request (JavaScript)
+
+```javascript copy
+const url = 'http://localhost:3000/tasks/';
+
+fetch(url, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        title: 'Finish report',
+        description: 'Complete final draft of the quarterly report for the CEO',
+        due_date: '2023-06-15'
+    })
+})
+    .then(res => res.json())
+    .then(json => console.log(json))
+    .catch(err => console.error(err));
+```
+
+### Response
+
+**Status Code:** 201
+```json copy
+{
+    "id": "2ddbf73a-3f62-4fbf-bfee-6c1056d5aa06",
+    "title": "Finish report",
+    "description": "Complete final draft of the quarterly report for the CEO",
+    "creation_date": "2023-05-10",
+    "due_date": "2023-06-15",
+    "status": "Pending"
+}
+```

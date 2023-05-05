@@ -1,0 +1,57 @@
+---
+title: M295 /
+---
+# /
+
+When the client sends a request to this endpoint, the server returns a JSON Array
+containing all the tasks.
+
+## Parameters
+
+***None***
+
+## Responses
+
+| Status | Meaning | Description |
+| ------ | ------- | ----------- |
+| **200** | OK | The tasks were successfully returned |
+| **403** | Unauthorized | The User isn't logged in |
+| **500** | Internal Server Error | Something went wrong on the server |
+
+## Example
+
+### Request (JavaScript)
+
+```javascript copy
+const url = 'http://localhost:3000/tasks';
+
+fetch(url)
+    .then(res => res.json())
+    .then(json => console.log(json))
+    .catch(err => console.error(err));
+```
+
+### Response
+
+**Status Code:** 200
+```json copy
+[
+    {
+        "id": "2ddbf73a-3f62-4fbf-bfee-6c1056d5aa06",
+        "title": "Finish report",
+        "description": "Complete final draft of the quarterly report for the CEO",
+        "creation_date": "2023-05-10",
+        "due_date": "2023-06-15",
+        "status": "Pending"
+    },
+    {
+        "id": "3d912a36-0d43-4f8f-a75c-cc2b5a716f2a",
+        "title": "Buy groceries",
+        "description": "Pick up milk, bread, eggs, and vegetables from the grocery store",
+        "creation_date": "2023-05-01",
+        "due_date": "2023-05-07",
+        "status": "Done"
+    },
+    ...
+]
+```

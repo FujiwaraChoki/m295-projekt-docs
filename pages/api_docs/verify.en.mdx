@@ -1,0 +1,43 @@
+---
+title: M295 /verify
+---
+# /verify
+
+The `/verify` endpoint is used to verify the session, which was set by the `/login` endpoint.
+
+## Parameters
+
+No parameters are required for this route.
+All required data is retrieved from the passed session.
+
+## Responses
+
+| Status | Meaning | Description |
+| ------ | ------- | ----------- |
+| **200** | OK | The User is logged in |
+| **403** | Unauthorized | The User is *not* logged in. |
+| **500** | Internal Server Error | Something went wrong on the server |
+
+## Example
+
+### Request (JavaScript)
+
+```javascript copy
+const url = 'http://localhost:3000';
+
+fetch(`${url}/verify`)
+    .then(res => res.json())
+    .then(json => console.log(json))
+    .catch(err => console.error(err));
+```
+
+### Response
+
+**Status Code:** 200
+```json copy
+{
+    "success": true,
+    "message": "Authorized",
+    "email": "lolipop66611@gmail.com"
+}
+```
