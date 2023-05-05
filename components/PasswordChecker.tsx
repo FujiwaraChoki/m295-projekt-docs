@@ -12,7 +12,7 @@ const PasswordChecker = ({ lang }) => {
     }
 
     const checkPassword = () => {
-        if (password === 'correctP@ss123!') {
+        if (password === 'm295') {
             setResponse({
                 message: lang === 'en' ? 'Login was successful.' : 'Anmeldung war erfolgreich.',
                 color: 'green'
