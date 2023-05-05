@@ -1,0 +1,60 @@
+---
+title: M295 /:id
+---
+# /:id
+
+This endpoint updates a specific task based on the ID provided in the URL.
+
+## Parameters
+
+| **Name** 	| **Type** 	| **Description**           	|
+|----------	|----------	|---------------------------	|
+| id    	| string   	| The ID of the task which is to be updated   	|
+
+## Responses
+
+| Status | Meaning | Description |
+| ------ | ------- | ----------- |
+| **200** | OK | The task was successfully updated |
+| **403** | Unauthorized | The User isn't logged in |
+| **404** | Not Found | The Task was not found |
+| **406** | Not accepted | Either the description, due date, state or the title wasn't provided |
+| **500** | Internal Server Error | Something went wrong on the server |
+
+## Example
+
+### Request (JavaScript)
+
+```javascript copy
+const url = 'http://localhost:3000/tasks/843eac4c-0e2f-44ba-921d-9c087b371227';
+
+fetch(url, {
+    method: 'PUT',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        title: 'Pay phone bill',
+        description: 'Pay the phone bill before the due date to avoid late fees',
+        due_date: '2023-05-22',
+        status: 'Done'
+    })
+})
+    .then(res => res.json())
+    .then(json => console.log(json))
+    .catch(err => console.error(err));
+```
+
+### Response
+
+**Status Code:** 200
+```json copy
+{
+    "id": "843eac4c-0e2f-44ba-921d-9c087b371227",
+    "title": "Pay phone bill",
+    "description": "Pay the phone bill before the due date to avoid late fees",
+    "creation_date": "2023-05-19",
+    "due_date": "2023-05-22",
+    "status": "Done"
+}
+```
